@@ -6,50 +6,47 @@ html, body {
   overflow-y: scroll;
 }
 
-#title-header {
+header {
   position: fixed;
-  margin-top: 0;
-  top: 0;
-  left: 0;
-  display: inline-block;
-  text-align: center;
-  text-transform: uppercase;
   background-color: #7D8CFF;
-  color: white;
-  padding: 23px;
-  width: 100%;
-  font-family: helvetica;
-}
-
-nav a {
-  text-decoration: none;
-  padding: 18px 15px 18px 15px;
-  position: relative;
-  color: white;
-}
-
-nav a:hover {
-  background-color: lightblue;
-}
-
-nav {
-  position: fixed;
-  /*background-color: #a8b2ff;*/
-  background-color: rgba(168, 178, 255, 0.85);
   width: 100%;
   left: 0;
-  text-align: center;
-  margin-top: 75px;
-  padding: 18px 15px 18px 15px;
+  top: 0;
   font-family: helvetica;
+  color: white;
 }
 
-.spacer {
-  height: 150px;
+.header-bar {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+}
+
+#header-title {
+  margin-left: 5vw;
+}
+
+#nav-bar ul {
+  display: grid;
+  background-color: purple;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#nav-bar a {
+  text-decoration: none;
+  background-color: blue;
+  padding: 10px;
+  border-radius: 15px;
+  color: white;
+}
+
+#nav-bar li {
+  list-style-type: none;
 }
 
 .content {
   text-align: center;
+  margin-top: 100px;
 }
 
 .content h2 {
