@@ -1,0 +1,151 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: lightgray;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+#title-header {
+  position: fixed;
+  margin-top: 0;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #7D8CFF;
+  color: white;
+  padding: 23px;
+  width: 100%;
+  font-family: helvetica;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 18px 15px 18px 15px;
+  position: relative;
+  color: white;
+}
+
+nav a:hover {
+  background-color: lightblue;
+}
+
+nav {
+  position: fixed;
+  /*background-color: #a8b2ff;*/
+  background-color: rgba(168, 178, 255, 0.85);
+  width: 100%;
+  left: 0;
+  text-align: center;
+  margin-top: 75px;
+  padding: 18px 15px 18px 15px;
+  font-family: helvetica;
+}
+
+.spacer {
+  height: 150px;
+}
+
+.content {
+  text-align: center;
+}
+
+.content h2 {
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.content hr {
+  border: 1px solid #7D8CFF;
+  width: 60%;
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 4%;
+}
+
+#about-me {
+  height: 300px;
+  scroll-margin-top: 150px;
+}
+
+#college-info {
+  height: 300px;
+  scroll-margin-top: 150px;
+}
+
+#my-projects {
+  height: 300px;
+  scroll-margin-top: 150px;
+}
+
+#my-links {
+  height: 300px;
+  scroll-margin-top: 150px;
+}
+
+#contact {
+  height: 300px;
+  scroll-margin-top: 150px;
+}
+
+.content h2 {
+  font-family: helvetica;
+}
+
+footer {
+  background-color: #7D8CFF;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  display: flex;
+  text-align: center;
+  color: white;
+  font-family: helvetica;
+  padding-bottom: 20px;
+}
+
+.container {
+  position: relative;
+  display: flex;
+}
+
+.contact, .my-links {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-links a {
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.my-links a:hover {
+  background-color: white;
+  color: #7D8CFF;
+}
+
+footer a, footer span {
+  color: white;
+  text-decoration: none;
+  font-family: helvetica;
+  margin: 3px 0;
+}
+
+footer h2 {
+  display: inline-block;
+}
+
+#copyright-info {
+  background-color: black;
+}
+
+/* add blurred out picture (maybe forest? maybe sumn idk) that sits above
+   About Me, College Careeer,... */
