@@ -67,33 +67,9 @@ nav {
   margin-bottom: 4%;
 }
 
-#about-me {
+.content section {
   height: 300px;
   scroll-margin-top: 150px;
-}
-
-#college-info {
-  height: 300px;
-  scroll-margin-top: 150px;
-}
-
-#my-projects {
-  height: 300px;
-  scroll-margin-top: 150px;
-}
-
-#my-links {
-  height: 300px;
-  scroll-margin-top: 150px;
-}
-
-#contact {
-  height: 300px;
-  scroll-margin-top: 150px;
-}
-
-.content h2 {
-  font-family: helvetica;
 }
 
 footer {
@@ -106,11 +82,6 @@ footer {
   color: white;
   font-family: helvetica;
   padding-bottom: 20px;
-}
-
-.container {
-  position: relative;
-  display: flex;
 }
 
 .contact, .my-links {
@@ -143,8 +114,9 @@ footer h2 {
   display: inline-block;
 }
 
-#copyright-info {
+.copyright-info {
   background-color: black;
+  position: absolute;
 }
 
 /* add blurred out picture (maybe forest? maybe sumn idk) that sits above
