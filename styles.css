@@ -1,21 +1,27 @@
 html, body {
   max-width: 100%;
   overflow-x: hidden;
-  background-color: lightgray;
   scroll-behavior: smooth;
   overflow-y: scroll;
   margin: 0;
   font-family: helvetica;
+  --main-color: #1E78FF;
+  --old-color: #7D8CFF;
+  --box-radius: 6px;
+  background-color: var(--main-color);
 }
 
 main {
   display: relative;
   margin-top: 100px;
+  background-color: white;
 }
+
+/* HEADER */
 
 header {
   position: fixed;
-  background-color: #7D8CFF;
+  background-color: var(--main-color);
   width: 100%;
   left: 0;
   top: 0;
@@ -24,7 +30,8 @@ header {
   display: grid;
   grid-template-columns: 2fr 4fr;
   align-items: center;
-  z-index: 10;
+  z-index: 100;
+
 }
 
 #header-title {
@@ -64,9 +71,9 @@ header {
 
 #nav-bar a:hover {
   border: 0 solid white;
-  border-radius: 8px;
+  border-radius: var(--box-radius);
   background-color: white;
-  color: #7D8CFF;
+  color: var(--main-color);
   animation-name: increase-button-size;
   animation-duration: 100ms;
   animation-fill-mode: forwards;
@@ -80,6 +87,8 @@ header {
   }
 }
 
+/* LANDING ZONE */
+
 .landing-zone {
   background-image: url('./cityscape.png');
   height: 100%;
@@ -92,7 +101,7 @@ header {
   -moz-filter: blur(5px);
   -o-filter: blur(5px);
   -ms-filter: blur(5px);
-  filter: blur(5px);
+  filter: blur(4px) brightness(0.6);
 }
 
 .lz-title {
@@ -110,7 +119,6 @@ header {
   position: relative;
   font-size: 6rem;
   margin: 0;
-  grid-area: Name;
   top: 10px;
 }
 
@@ -118,18 +126,18 @@ header {
   position: relative;
   color: white;
   font-size: 2.3rem;
-  grid-area: Major;
 }
 
 .lz-title hr {
   position: relative;
-  background: white;
+  background-color: white;
   height: 0.25rem;
   width: 50%;
   border: 0 solid white;
   border-radius: 25px;
-  grid-area: Line;
 }
+
+/* CONTENT */
 
 .content {
   text-align: center;
@@ -137,32 +145,103 @@ header {
 }
 
 .content h3 {
-  display: inline-block;
-  padding: 5px 10px 5px 10px;
-  border-radius: 10px;
-  border: 2px solid black;
+  display: inline;
+  font-size: 2.5rem;
+  padding: 5px 20px 5px 20px;
+  border-radius: var(--box-radius);
+  border: 2px solid var(--main-color);
+  background-color: var(--main-color);
+  color: white;
+  margin: 0;
 }
 
 .content hr {
-  border: 1px solid #7D8CFF;
+  background-color: var(--main-color);
+  height: 0.25rem;
   width: 60%;
-  margin: auto;
-  margin-top: 1%;
-  margin-bottom: 4%;
+  /* margin-bottom: 4%; */
+  border: 0 solid white;
+  border-radius: 25px;
 }
 
 .content section {
   height: calc(100vh - 100px);
   scroll-margin-top: 100px;
   margin-bottom: 50px;
+  /* border: 1px solid black; */
 }
 
-#academics {
-  background: pink;
+.content-title {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  height: 20%;
 }
+
+/* ABOUT ME */
+
+#about-me-content {
+  height: 80%;
+  scroll-margin-top: 100px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "picture sec1 sec2"
+    "picture sec1 sec3";
+  justify-items: center;
+  align-items: center;
+}
+
+#selfie {
+  width: 300px;
+  height: 300px;
+  grid-area: picture;
+}
+
+.section-1 {
+  /* background-color: black; */
+  height: 100%;
+  width: 100%;
+  grid-area: sec1;
+}
+
+.section-2 {
+  /* background-color: red; */
+  height: 100%;
+  width: 100%;
+  grid-area: sec2;
+}
+
+.section-3 {
+  /* background-color: green; */
+  height: 100%;
+  width: 100%;
+  grid-area: sec3;
+}
+
+/* ACADEMICS */
+
+#academics-content {
+  height: 80%;
+  scroll-margin-top: 100px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "picture sec1 sec2"
+    "picture sec1 sec3";
+  justify-items: center;
+  align-items: center;
+}
+
+/* FOOTER */
 
 footer {
-  background-color: #7D8CFF;
+  background-color: var(--main-color);
   width: 100%;
   position: absolute;
   left: 0;
@@ -184,12 +263,12 @@ footer {
 .my-links a {
   border: 1px solid white;
   padding: 5px;
-  border-radius: 8px;
+  border-radius: var(--box-radius);
 }
 
 .my-links a:hover {
   background-color: white;
-  color: #7D8CFF;
+  color: var(--main-color);
 }
 
 footer a, footer span {
@@ -207,6 +286,3 @@ footer h2 {
   background-color: black;
   position: absolute;
 }
-
-/* add blurred out picture (maybe forest? maybe sumn idk) that sits above
-   About Me, College Careeer,... */
