@@ -8,12 +8,13 @@ html, body {
   --main-color: #1E78FF;
   --old-color: #7D8CFF;
   --box-radius: 6px;
+  --header-height: 80px;
   background-color: var(--main-color);
 }
 
 main {
   display: relative;
-  margin-top: 100px;
+  margin-top: var(--header-height);
   background-color: white;
 }
 
@@ -26,22 +27,17 @@ header {
   left: 0;
   top: 0;
   color: white;
-  height: 100px;
+  height: var(--header-height);
   display: grid;
-  grid-template-columns: 2fr 4fr;
+  grid-template-columns: 1fr 9fr;
   align-items: center;
   z-index: 100;
-
-}
-
-#header-title {
-  margin-left: 5vw;
 }
 
 #logo {
-  height: 80px;
-  width: 80px;
-  margin-left: 2vw;
+  height: 75px;
+  width: 75px;
+  justify-self: center;
 }
 
 #logo:hover {
@@ -56,7 +52,8 @@ header {
   margin-right: 5vw;
   display: flex;
   justify-content: flex-end;
-  height: 100%;
+  height: 1.2rem;
+  padding: 10px 0;
   align-items: center;
 }
 
@@ -111,7 +108,7 @@ header {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - var(--header-height));
 }
 
 .lz-title h2 {
@@ -141,7 +138,8 @@ header {
 
 .content {
   text-align: center;
-  margin-top: 50px;
+  padding-top: 50px;
+  background-color: black;
 }
 
 .content h3 {
@@ -165,9 +163,10 @@ header {
 }
 
 .content section {
-  height: calc(100vh - 100px);
-  scroll-margin-top: 100px;
-  margin-bottom: 50px;
+  height: calc(100vh - var(--header-height));
+  scroll-margin-top: var(--header-height);
+  padding-bottom: 50px;
+  background-color: black;
   /* border: 1px solid black; */
 }
 
@@ -183,7 +182,7 @@ header {
 
 #about-me-content {
   height: 80%;
-  scroll-margin-top: 100px;
+  scroll-margin-top: var(--header-height);
   margin-bottom: 50px;
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -203,22 +202,19 @@ header {
 
 .section-1 {
   /* background-color: black; */
-  height: 100%;
-  width: 100%;
+  height: 300px;
   grid-area: sec1;
 }
 
 .section-2 {
   /* background-color: red; */
-  height: 100%;
-  width: 100%;
+  height: 150px;
   grid-area: sec2;
 }
 
 .section-3 {
   /* background-color: green; */
-  height: 100%;
-  width: 100%;
+  height: 150px;
   grid-area: sec3;
 }
 
