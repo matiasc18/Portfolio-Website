@@ -1,79 +1,249 @@
 html, body {
   max-width: 100%;
   overflow-x: hidden;
-  background-color: lightgray;
   scroll-behavior: smooth;
   overflow-y: scroll;
+  margin: 0;
+  font-family: helvetica; /* montserrat */
+  --main-color: #1E78FF;
+  --secondary-color: #0855c9;
+  --old-color: #7D8CFF;
+  --box-radius: 6px;
+  --header-height: 80px;
+  background-color: var(--main-color);
 }
 
-#title-header {
+main {
+  display: relative;
+  margin-top: var(--header-height);
+  background-color: white;
+}
+
+/* HEADER */
+
+header {
   position: fixed;
-  margin-top: 0;
-  top: 0;
-  left: 0;
-  display: inline-block;
-  text-align: center;
-  text-transform: uppercase;
-  background-color: #7D8CFF;
-  color: white;
-  padding: 23px;
+  background-color: var(--main-color);
   width: 100%;
-  font-family: helvetica;
+  left: 0;
+  top: 0;
+  color: white;
+  height: var(--header-height);
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  align-items: center;
+  z-index: 100;
 }
 
-nav a {
+#logo {
+  height: 75px;
+  width: 75px;
+  justify-self: center;
+}
+
+#logo:hover {
+  animation-name: increase-button-size;
+  animation-duration: 100ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+#check, .check-button {
+  display: none;
+}
+
+#nav-bar {
+  margin-right: 5vw;
+  display: flex;
+  justify-content: flex-end;
+  height: 1.2rem;
+  padding: 10px 0;
+  align-items: center;
+}
+
+#nav-bar a {
+  display: block;
   text-decoration: none;
-  padding: 18px 15px 18px 15px;
+  text-transform: uppercase;
+  padding: 10px;
+  color: white;
+  font-size: 1.1rem;
+  margin-left: 3em;
+}
+
+#nav-bar a:hover {
+  border: 0 solid white;
+  border-radius: var(--box-radius);
+  background-color: white;
+  color: var(--main-color);
+  animation-name: increase-button-size;
+  animation-duration: 100ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+@keyframes increase-button-size {
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* LANDING ZONE */
+
+.landing-zone {
+  background-image: url('./cityscape.png');
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(4px) brightness(0.6);
+}
+
+.lz-title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+}
+
+.lz-title h2 {
+  color: white;
+  position: relative;
+  font-size: 6rem;
+  margin: 0;
+  top: 10px;
+}
+
+.lz-title span {
   position: relative;
   color: white;
+  font-size: 2.3rem;
 }
 
-nav a:hover {
-  background-color: lightblue;
+.lz-title hr {
+  position: relative;
+  background-color: white;
+  height: 0.25rem;
+  width: 50%;
+  border: 0 solid white;
+  border-radius: 25px;
 }
 
-nav {
-  position: fixed;
-  /*background-color: #a8b2ff;*/
-  background-color: rgba(168, 178, 255, 0.85);
-  width: 100%;
-  left: 0;
-  text-align: center;
-  margin-top: 75px;
-  padding: 18px 15px 18px 15px;
-  font-family: helvetica;
-}
-
-.spacer {
-  height: 150px;
-}
+/* CONTENT */
 
 .content {
   text-align: center;
+  padding-top: 50px;
+  background-color: black;
 }
 
-.content h2 {
-  display: inline-block;
-  padding: 5px 10px 5px 10px;
-  border-radius: 10px;
-  border: 2px solid black;
+.content h3 {
+  display: inline;
+  font-size: 2.5rem;
+  padding: 5px 20px 5px 20px;
+  border-radius: var(--box-radius);
+  border: 2px solid var(--main-color);
+  background-color: var(--main-color);
+  color: white;
+  margin: 0;
 }
 
 .content hr {
-  border: 1px solid #7D8CFF;
+  background-color: var(--main-color);
+  height: 0.25rem;
   width: 60%;
-  margin: auto;
-  margin-top: 1%;
-  margin-bottom: 4%;
+  /* margin-bottom: 4%; */
+  border: 0 solid white;
+  border-radius: 25px;
 }
 
 .content section {
-  height: 300px;
-  scroll-margin-top: 150px;
+  height: calc(100vh - var(--header-height));
+  scroll-margin-top: var(--header-height);
+  padding-bottom: 50px;
+  background-color: black;
+  /* border: 1px solid black; */
 }
 
+.content-title {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  height: 20%;
+}
+
+/* ABOUT ME */
+
+#about-me-content {
+  height: 80%;
+  scroll-margin-top: var(--header-height);
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "picture sec1 sec2"
+    "picture sec1 sec3";
+  justify-items: center;
+  align-items: center;
+}
+
+#selfie {
+  width: 300px;
+  height: 300px;
+  grid-area: picture;
+}
+
+.section-1 {
+  /* background-color: black; */
+  height: 300px;
+  grid-area: sec1;
+}
+
+.section-2 {
+  /* background-color: red; */
+  height: 150px;
+  grid-area: sec2;
+}
+
+.section-3 {
+  /* background-color: green; */
+  height: 150px;
+  grid-area: sec3;
+}
+
+/* ACADEMICS */
+
+#academics-content {
+  height: 80%;
+  scroll-margin-top: 100px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "picture sec1 sec2"
+    "picture sec1 sec3";
+  justify-items: center;
+  align-items: center;
+}
+
+/* FOOTER */
+
 footer {
-  background-color: #7D8CFF;
+  background-color: var(--main-color);
   width: 100%;
   position: absolute;
   left: 0;
@@ -95,12 +265,12 @@ footer {
 .my-links a {
   border: 1px solid white;
   padding: 5px;
-  border-radius: 8px;
+  border-radius: var(--box-radius);
 }
 
 .my-links a:hover {
   background-color: white;
-  color: #7D8CFF;
+  color: var(--main-color);
 }
 
 footer a, footer span {
@@ -119,5 +289,85 @@ footer h2 {
   position: absolute;
 }
 
-/* add blurred out picture (maybe forest? maybe sumn idk) that sits above
-   About Me, College Careeer,... */
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+  header {
+    position: fixed;
+    background-color: var(--main-color);
+    width: 100%;
+    left: 0;
+    top: 0;
+    color: white;
+    height: var(--header-height);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 1fr;
+    align-items: center;
+    z-index: 100;
+    grid-template-areas:
+      "logo button"
+      "links links"
+  }
+  
+  #logo {
+    height: 75px;
+    width: 75px;
+    justify-self: start;
+    grid-area: logo;
+  }
+
+  #nav-bar {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    top: var(--header-height);
+    background-color: var(--secondary-color);
+    grid-area: links;
+    text-align: center;
+    right: -100%;
+    margin: 0;
+    transition: all .5s;
+  }
+  
+  #nav-bar a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    font-size: 1.5rem;
+    margin: 15px 0;
+  }
+  
+  #nav-bar a:hover {
+    border: 0 solid white;
+    border-radius: var(--box-radius);
+    background-color: white;
+    color: var(--main-color);
+    animation-name: increase-button-size;
+    animation-duration: 100ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+  }
+
+  #check {
+    grid-area: button;
+  }
+
+  .check-button {
+    justify-self: end;
+    margin-right: 5vw;
+    display: block;
+    font-size: 2rem;
+  }
+
+  #check:checked ~ #nav-bar {
+    right: 0px;
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+
+}
